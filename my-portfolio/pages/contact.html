@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - My Portfolio</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body id="top">
+    <!-- header -->
+
+    <header>
+      <h1>Linh Phạm</h1>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html"><i class="mdi mdi-home"></i> Home</a>
+          </li>
+
+          <li>
+            <a href="about.html"><i class="mdi mdi-account"></i> About</a>
+          </li>
+
+          <li>
+            <a href="skills.html"
+              ><i class="mdi mdi-lightbulb-on"></i> Skills</a
+            >
+          </li>
+
+          <li>
+            <a href="projects.html"><i class="mdi mdi-folder"></i> Projects</a>
+          </li>
+
+          <li>
+            <a href="blog.html"><i class="mdi mdi-post"></i> Blog</a>
+          </li>
+
+          <li>
+            <a href="contact.html"><i class="mdi mdi-email"></i> Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- contact form -->
+      <section>
+        <h2>Liên hệ với tôi</h2>
+
+        <form action="#" method="POST">
+          <!-- thong tin co ban -->
+
+          <fieldset>
+            <legend>Thông tin cơ bản</legend>
+
+            <p>
+              <label for="fullname">Họ và tên:</label><br />
+
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                minlength="2"
+              />
+            </p>
+
+            <p>
+              <label for="email">Email:</label><br />
+
+              <input type="email" id="email" name="email" required />
+            </p>
+
+            <p>
+              <label for="phone">Số điện thoại:</label><br />
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10,11}"
+                placeholder="0901234567"
+              />
+            </p>
+          </fieldset>
+          <!-- chủ đề -->
+          <fieldset>
+            <legend>Chủ đề</legend>
+
+            <label for="subject">Chọn chủ đề:</label><br />
+
+            <select id="subject" name="subject">
+              <option value="">-- Chọn chủ đề --</option>
+
+              <option>Hỏi về dự án</option>
+
+              <option>Hợp tác</option>
+
+              <option>Tuyển dụng</option>
+
+              <option>Khác</option>
+            </select>
+          </fieldset>
+          <!-- mức độ ưu tiên -->
+
+          <fieldset>
+            <legend>Mức độ ưu tiên</legend>
+
+            <label>
+              <input type="radio" name="priority" value="low" />
+
+              Thấp
+            </label>
+
+            <br />
+
+            <label>
+              <input type="radio" name="priority" value="medium" />
+
+              Trung bình
+            </label>
+
+            <br />
+
+            <label>
+              <input type="radio" name="priority" value="high" />
+
+              Cao
+            </label>
+          </fieldset>
+          <!-- dịch vụ -->
+          <fieldset>
+            <legend>Dịch vụ quan tâm</legend>
+
+            <label>
+              <input type="checkbox" name="service" value="web" />
+
+              Web Development
+            </label>
+
+            <br />
+
+            <label>
+              <input type="checkbox" name="service" value="mobile" />
+
+              Mobile App
+            </label>
+
+            <br />
+
+            <label>
+              <input type="checkbox" name="service" value="uiux" />
+
+              UI/UX Design
+            </label>
+
+            <br />
+
+            <label>
+              <input type="checkbox" name="service" value="consulting" />
+
+              Consulting
+            </label>
+          </fieldset>
+          <!-- tin nhắn -->
+          <fieldset>
+            <legend>Tin nhắn</legend>
+
+            <label for="message"> Nội dung: </label>
+
+            <br />
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              minlength="10"
+              placeholder="Nhập tin nhắn của bạn..."
+            ></textarea>
+          </fieldset>
+          <!-- đánh giá -->
+          <fieldset>
+            <legend>Đánh giá website</legend>
+
+            <label for="rating"> Đánh giá website này: 1-5 sao </label>
+
+            <br />
+
+            <input
+              type="range"
+              id="rating"
+              name="rating"
+              min="1"
+              max="5"
+              value="5"
+            />
+          </fieldset>
+
+          <!-- file -->
+
+          <fieldset>
+            <legend>Đính kèm</legend>
+
+            <label for="file"> Đính kèm CV hoặc tài liệu (nếu có) </label>
+
+            <br />
+
+            <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" />
+          </fieldset>
+          <!-- điều khoản -->
+          <fieldset>
+            <legend>Xác nhận</legend>
+
+            <label>
+              <input type="checkbox" required />
+
+              Tôi đồng ý với Chính sách bảo mật
+            </label>
+          </fieldset>
+
+          <p>
+            <button type="submit">Gửi tin nhắn</button>
+
+            <button type="reset">Xóa form</button>
+          </p>
+        </form>
+      </section>
+      <!-- thông tin liên lạc -->
+      <section>
+        <h2>Thông tin liên hệ</h2>
+
+        <address>
+          <p>
+            Email:
+            <a href="mailto:linhpham@example.com"> linhpham@example.com </a>
+          </p>
+
+          <p>
+            Điện thoại:
+            <a href="tel:+84901234567"> +84 901 234 567 </a>
+          </p>
+
+          <p>Địa chỉ: 123 Đường ABC, Quận Hoàng Mai, Hà Nội, Việt Nam</p>
+        </address>
+
+        <h3>Kết nối mạng xã hội</h3>
+
+        <p>
+          <a href="#">
+            <i class="mdi mdi-facebook"></i>
+            Facebook
+          </a>
+
+          |
+
+          <a href="#">
+            <i class="mdi mdi-instagram"></i>
+            Instagram
+          </a>
+
+          |
+
+          <a href="#">
+            <i class="mdi mdi-twitter"></i>
+            Twitter
+          </a>
+
+          |
+
+          <a href="#">
+            <i class="mdi mdi-github"></i>
+            GitHub
+          </a>
+
+          |
+
+          <a href="#">
+            <i class="mdi mdi-linkedin"></i>
+            LinkedIn
+          </a>
+        </p>
+      </section>
+
+      <!-- google map -->
+
+      <section>
+        <h2>Bản đồ</h2>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.931599835736!2d105.841171!3d21.028511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abcf!2sHanoi!5e0!3m2!1svi!2svn!4v1700000000000"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+
+      <!-- giờ làm việc -->
+      <section>
+        <h2>Giờ làm việc</h2>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+
+              <th>Thời gian</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Thứ Hai</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>17:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Thứ Ba</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>17:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Thứ Tư</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>17:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Thứ Năm</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>17:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Thứ Sáu</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>17:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Thứ Bảy</td>
+
+              <td>
+                <time>08:00</time> -
+                <time>12:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Chủ Nhật</td>
+
+              <td>Nghỉ</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <!-- footer -->
+
+    <footer>
+      <hr />
+
+      <p>&copy; 2026 Linh Phạm. All Rights Reserved.</p>
+
+      <p>
+        <a href="#">
+          <i class="mdi mdi-facebook"></i>
+          Facebook
+        </a>
+
+        |
+
+        <a href="#">
+          <i class="mdi mdi-instagram"></i>
+          Instagram
+        </a>
+
+        |
+
+        <a href="#">
+          <i class="mdi mdi-twitter"></i>
+          Twitter
+        </a>
+
+        |
+
+        <a href="#">
+          <i class="mdi mdi-github"></i>
+          GitHub
+        </a>
+
+        |
+
+        <a href="#">
+          <i class="mdi mdi-linkedin"></i>
+          LinkedIn
+        </a>
+      </p>
+
+      <p>
+        <a href="#top">Lên đầu trang </a>
+      </p>
+    </footer>
+  </body>
+</html>
