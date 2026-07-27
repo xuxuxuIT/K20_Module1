@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox - 10 Container Bài Tập</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f5f7;
+        margin: 0;
+        padding: 30px;
+      }
+      h1 {
+        text-align: center;
+        color: #222;
+      }
+      .exercise {
+        background: #fff;
+        border-radius: 8px;
+        padding: 16px 20px 24px;
+        margin: 0 auto 28px;
+        max-width: 680px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      }
+      .exercise h2 {
+        font-size: 15px;
+        color: #444;
+        margin-bottom: 10px;
+      }
+      .container {
+        width: 600px;
+        height: 200px;
+        background: #eef0ff;
+        display: flex;
+      }
+      .box {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .box1 {
+        background: #ff6b6b;
+      }
+      .box2 {
+        background: #4d96ff;
+      }
+      .box3 {
+        background: #6bcb77;
+      }
+      /* container1 */
+      #c1 {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* container2 */
+      #c2 {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* container 3 */
+      #c3 {
+        flex-direction: column;
+        align-items: center;
+      }
+      #c3 .box1 {
+        margin-bottom: 20px;
+      }
+      #c3 .box2 {
+        margin-bottom: 50px;
+      }
+
+      /* container 4 */
+      #c4 {
+        justify-content: center;
+        align-items: center;
+      }
+      #c4 .box2 {
+        margin-left: 10px;
+      }
+      #c4 .box3 {
+        margin-left: 40px;
+      }
+
+      /* container 5 */
+      #c5 {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* container 6 */
+      #c6 {
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      /* container 7 */
+      #c7 {
+        flex-direction: column;
+        align-items: center;
+      }
+      #c7 .box1 {
+        margin-bottom: 60px;
+      }
+      #c7 .box2 {
+        margin-bottom: 20px;
+      }
+
+      /* container 8 */
+      #c8 {
+        align-items: center;
+      }
+      #c8 .box2 {
+        margin: 0 auto;
+      }
+
+      /* container 9 */
+      #c9 {
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      #c9 .box1 {
+        margin-top: -40px;
+      }
+      #c9 .box3 {
+        margin-top: 40px;
+      }
+      /* container 10 */
+      #c10 .box1 {
+        align-self: flex-start;
+      }
+      #c10 .box2 {
+        margin: auto;
+      }
+      #c10 .box3 {
+        align-self: flex-end;
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="exercise">
+      <h2>Container 1</h2>
+      <div class="container" id="c1">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 2:</h2>
+      <div class="container" id="c2">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 3:</h2>
+      <div class="container" id="c3">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 4:</h2>
+      <div class="container" id="c4">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 5:</h2>
+      <div class="container" id="c5">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 6:</h2>
+      <div class="container" id="c6">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 7:</h2>
+      <div class="container" id="c7">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 8:</h2>
+      <div class="container" id="c8">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 9:</h2>
+      <div class="container" id="c9">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>Container 10:</h2>
+      <div class="container" id="c10">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+      </div>
+    </div>
+  </body>
+</html>
