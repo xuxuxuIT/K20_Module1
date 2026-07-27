@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Day 8</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <!-- 1. Cheese Burger -->
+      <div class="card" id="burger">
+        <div class="art">
+          <img src="./img/burger.png" alt="" width="300px" />
+        </div>
+        <div class="label">Cheese Burger</div>
+        <div class="price">$4.99</div>
+      </div>
+
+      <!-- 2. Phone mockup -->
+      <div class="card" id="phone">
+        <div class="phone-shell">
+          <img src="./img/phone.png" alt="" />
+          <div class="phone-item">
+            <div class="info"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Notifications -->
+      <div class="card" id="notif">
+        <div class="notif-bubble">
+          <div class="pin">📍</div>
+          <div class="txt">
+            <div class="title">
+              Restro Beast Restaurant <span>JUST NOW</span>
+            </div>
+            Welcome to RESTRO! Explore our delicious dishes now! 😋
+          </div>
+        </div>
+        <div class="notif-bubble">
+          <div class="pin">📍</div>
+          <div class="txt">
+            <div class="title">
+              Restro Beast Restaurant <span>JUST NOW</span>
+            </div>
+            Order Placed! Order on the way! 🚴
+          </div>
+        </div>
+        <div class="art">
+          <img src="./img/burger.png" alt="" width="150px" height="150px" />
+        </div>
+      </div>
+
+      <!-- 4. Special Menu -->
+      <div class="card" id="menu">
+        <h2>Special Menu</h2>
+        <div class="menu-item">
+          <div class="info">
+            <div class="tag">🌶 Hot Spicy</div>
+            <div class="title">Philly Cheese Steak Pizza</div>
+            <div class="price">$8.99</div>
+            <div class="desc">
+              Tender slices of steak, fresh onions, fresh green peppers and
+              fresh mushrooms with provolone... <b>read more</b>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="./img/pizza.avif" width="50px" height="50px" alt="" />
+            <div class="add-btn">+</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="info">
+            <div class="tag">🌶 Hot Spicy</div>
+            <div class="title">Cheese Burger</div>
+            <div class="price">$7.50</div>
+            <div class="desc">
+              Tender slices of steak, fresh onions, fresh green peppers and
+              fresh mushrooms.
+            </div>
+          </div>
+          <div
+            class="thumb"
+            style="background: linear-gradient(135deg, #e0a233, #8a4b12)"
+          >
+            <img src="./img/burger1.avif" alt="" width="50px" height="50px" />
+            <div class="add-btn">+</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="info">
+            <div class="tag">🌶 Hot Spicy</div>
+            <div class="title">Potato Fries</div>
+            <div class="price">$4.50</div>
+            <div class="desc">
+              Tender slices of steak, fresh onions, fresh green peppers and
+              fresh mushrooms... <b>read more</b>
+            </div>
+          </div>
+          <div
+            class="thumb"
+            style="background: linear-gradient(135deg, #f0d419, #c08a19)"
+          >
+            <img src="./img/fries.avif" alt="" width="50px" height="50px" />
+            <div class="add-btn">+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Sales Analytics -->
+      <div class="card" id="sales">
+        <div class="bg-text">REST<br />BEAST</div>
+        <h3>Sales Analytics</h3>
+        <div class="num">44,500</div>
+        <div class="sub">for all time</div>
+        <div class="chart">
+          <div class="bar-wrap">
+            <div class="bar" style="height: 60%"></div>
+            <div class="day">Mon</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar" style="height: 75%"></div>
+            <div class="day">Tue</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar hi" style="height: 88%"></div>
+            <div class="day">Wed</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar" style="height: 70%"></div>
+            <div class="day">Thu</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar hi" style="height: 100%"></div>
+            <div class="day">Fri</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar" style="height: 65%"></div>
+            <div class="day">Sat</div>
+          </div>
+          <div class="bar-wrap">
+            <div class="bar" style="height: 78%"></div>
+            <div class="day">Sun</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Choose dish -->
+      <div class="card" id="choose">
+        <div class="art">
+          <img src="./img/man.png" alt="" width="400px" height="400" />
+        </div>
+        <div class="pills">
+          <div class="pill">🍔 Choose dish</div>
+          <div class="pill mid">🛒 Add to cart</div>
+          <div class="pill right">🚚 Pay &amp; Track</div>
+        </div>
+      </div>
+
+      <!-- 7. New orders panel -->
+      <div class="card" id="orders">
+        <div class="dot"></div>
+        <div class="stat-pill" style="align-self: flex-start">
+          New Orders Today
+          <div class="badge">34</div>
+        </div>
+        <div class="stat-pill" style="align-self: center">
+          Table Reservations
+          <div class="badge">18</div>
+        </div>
+        <div class="stat-pill" style="align-self: flex-end">
+          Pending Queries
+          <div class="badge">40+</div>
+        </div>
+      </div>
+
+      <!-- 8. Ratings -->
+      <div class="card" id="ratings">
+        <h2>Ratings</h2>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="avatar">🧑</div>
+            <div class="name">Peter Williams</div>
+            <div class="score">5 ⭐</div>
+          </div>
+          <div class="verified">✅ Verified order</div>
+          <div class="review-text">
+            The food was fresh, delicious, and beautifully presented. The
+            service was quick, and the vegan options were a delightful surprise!
+          </div>
+          <div class="review-bottom">
+            <div class="time">2 months ago</div>
+            <div class="bar"><span></span></div>
+            <div class="score-num">4.5/5 ⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Map -->
+      <div class="card" id="map">
+        <div class="map-inner">
+            <img src="./img/map.png" alt="">
+            FOUNTAIN<br />HEIGHTS
+          </div>
+          <div class="shield blue" style="top: 8px; right: 60px">280</div>
+          <div class="shield" style="top: 34%; left: 5%">65</div>
+          <div class="shield" style="bottom: 12px; right: 80px">11</div>
+          <div class="pin-marker"></div>
+          <div class="arriving">Arriving in 10 mins</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

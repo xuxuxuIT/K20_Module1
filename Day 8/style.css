@@ -1,0 +1,612 @@
+:root {
+  --orange: #ff7a1a;
+  --orange-dark: #f5680a;
+  --blue: #aec4f0;
+  --blue-dark: #8faae8;
+  --navy: #5b6b94;
+  --ink: #241a12;
+  --green: #3fbf6b;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #0b0b0b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 18px;
+}
+.grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 250px 165px 160px 200px;
+  gap: 16px;
+  grid-template-areas:
+    "burger phone notif menu"
+    "burger sales sales menu"
+    "choose sales sales orders"
+    "choose ratings map map";
+}
+.card {
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  color: #fff;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* ===== 1. Cheese burger card ===== */
+#burger {
+  grid-area: burger;
+  background: linear-gradient(
+    155deg,
+    var(--orange) 0%,
+    var(--orange-dark) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#burger .art {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 78%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+  filter: drop-shadow(0 20px 18px rgba(0, 0, 0, 0.35));
+}
+#burger .label {
+  font-size: 24px;
+  font-weight: 800;
+}
+#burger .price {
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+/* ===== 2. Phone mockup card ===== */
+#phone {
+  grid-area: phone;
+  background: linear-gradient(160deg, var(--blue), var(--blue-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.phone-shell {
+  width: 100%;
+  height: 50%;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+/* ===== 3. Notifications card ===== */
+#notif {
+  grid-area: notif;
+  background: linear-gradient(160deg, #7688b8, #5b6b94);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 14px;
+}
+.notif-bubble {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.notif-bubble .pin {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.notif-bubble .txt {
+  font-size: 10px;
+  line-height: 1.3;
+}
+.notif-bubble .title {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+.notif-bubble .title span {
+  font-weight: 400;
+  font-size: 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+#notif .art {
+  margin-top: auto;
+  align-self: center;
+  font-size: 90px;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* ===== 4. Special menu card ===== */
+#menu {
+  grid-area: menu;
+  background: linear-gradient(160deg, var(--orange), var(--orange-dark));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#menu h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.menu-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  color: #222;
+  align-items: center;
+}
+.menu-item .info {
+  flex: 1;
+  min-width: 0;
+}
+.menu-item .tag {
+  background: #e8f7ee;
+  color: #2fa360;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.menu-item .title {
+  font-size: 10.5px;
+  font-weight: 800;
+}
+.menu-item .price {
+  font-size: 10px;
+  font-weight: 800;
+  color: #222;
+  margin: 2px 0;
+}
+.menu-item .desc {
+  font-size: 7.5px;
+  color: #999;
+  line-height: 1.2;
+}
+.menu-item .desc b {
+  color: #e5622d;
+  font-weight: 700;
+}
+.menu-item .thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  background: linear-gradient(135deg, #f0c419, #c0392b);
+  position: relative;
+}
+.menu-item .add-btn {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background: var(--orange);
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  border: 2px solid #fff;
+}
+
+/* ===== 5. Sales analytics card ===== */
+#sales {
+  grid-area: sales;
+  background: linear-gradient(160deg, var(--orange), var(--orange-dark));
+  display: flex;
+  flex-direction: column;
+}
+#sales .bg-text {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  font-size: 70px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: 2px;
+  user-select: none;
+}
+#sales h3 {
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 0.95;
+}
+#sales .num {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 2px 0;
+}
+#sales .sub {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex: 1;
+  padding-bottom: 4px;
+}
+.chart .bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+.chart .bar {
+  width: 100%;
+  border-radius: 10px 10px 4px 4px;
+  background: #fff;
+}
+.chart .bar.hi {
+  background: #5d8ef0;
+}
+.chart .day {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+/* ===== 6. Choose dish card ===== */
+#choose {
+  grid-area: choose;
+  background: linear-gradient(160deg, var(--blue), var(--blue-dark));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+#choose .art {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+}
+#choose .pills {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  width: 100%;
+}
+.pill {
+  background: #fff;
+  color: var(--orange-dark);
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 8px 14px;
+  align-self: flex-start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pill.mid {
+  align-self: center;
+}
+.pill.right {
+  align-self: flex-end;
+}
+
+/* ===== 7. New orders / reservations panel ===== */
+#orders {
+  grid-area: orders;
+  background: linear-gradient(160deg, var(--blue), var(--blue-dark));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+}
+.stat-pill {
+  background: #fff;
+  color: var(--orange-dark);
+  font-weight: 700;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 7px 12px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+}
+.stat-pill .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+#orders .dot {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #6de08a, #2fa360);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.35);
+}
+
+/* ===== 8. Ratings card ===== */
+#ratings {
+  grid-area: ratings;
+  background: linear-gradient(160deg, var(--orange), var(--orange-dark));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#ratings h2 {
+  font-size: 17px;
+  font-weight: 800;
+}
+.review-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  color: #222;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.review-top .avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #d7a26b;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.review-top .name {
+  font-size: 11px;
+  font-weight: 800;
+  flex: 1;
+}
+.review-top .score {
+  background: var(--green);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+.verified {
+  font-size: 8px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.review-text {
+  font-size: 9px;
+  color: #555;
+  line-height: 1.4;
+}
+.review-bottom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+.review-bottom .time {
+  font-size: 8px;
+  color: #aaa;
+}
+.review-bottom .bar {
+  flex: 1;
+  height: 5px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.review-bottom .bar span {
+  display: block;
+  height: 100%;
+  width: 90%;
+  background: var(--green);
+}
+.review-bottom .score-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* ===== 9. Map card ===== */
+#map {
+  grid-area: map;
+  background: #e9e9e4;
+  padding: 0;
+}
+.map-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.map-road {
+  position: absolute;
+  background: #f5cf5a;
+}
+.map-road.h {
+  height: 10px;
+  left: -5%;
+  width: 110%;
+  top: 35%;
+  transform: rotate(-6deg);
+}
+.map-road.h2 {
+  height: 8px;
+  left: -5%;
+  width: 110%;
+  top: 60%;
+  transform: rotate(4deg);
+  background: #f0f0e8;
+  border-top: 1px solid #ddd;
+}
+.map-road.diag {
+  height: 8px;
+  width: 65%;
+  top: 10%;
+  left: 5%;
+  transform: rotate(30deg);
+  background: #f0f0e8;
+}
+.map-green {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #cfe3c2;
+  border-radius: 50%;
+}
+.map-label {
+  position: absolute;
+  font-size: 11px;
+  color: #3a6f43;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.map-label.big {
+  font-size: 15px;
+  color: #333;
+  font-weight: 700;
+}
+.shield {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #fff;
+  border: 2px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+  color: #333;
+  position: absolute;
+}
+.shield.blue {
+  background: #2f6fce;
+  color: #fff;
+  border-color: #2f6fce;
+}
+.pin-marker {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50% 50% 50% 0;
+  background: #e5622d;
+  transform: rotate(-45deg);
+  top: 48%;
+  left: 44%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.arriving {
+  position: absolute;
+  top: 52%;
+  left: 48%;
+  background: #2b2b2b;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 16px;
+  white-space: nowrap;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex: 1;
+  padding-bottom: 4px;
+}
+.bar-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* bar luôn dính đáy, giống biểu đồ cột thật */
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  height: 100%; /* <-- dòng quan trọng nhất, để % height của .bar có cơ sở */
+}
+.chart .bar {
+  width: 100%;
+  border-radius: 10px 10px 4px 4px;
+  background: #fff;
+}
+.chart .bar.hi {
+  background: #5d8ef0;
+}
+.chart .day {
+  font-size: 11px;
+  opacity: 0.9;
+}
