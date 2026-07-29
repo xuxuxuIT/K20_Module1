@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="product-app">
+      <input
+        type="text"
+        id="search-box"
+        placeholder="Tìm sản phẩm theo tên..."
+      />
+
+      <select id="category-filter">
+        <option value="all">Tất cả danh mục</option>
+        <option value="do-dien-tu">Đồ điện tử</option>
+        <option value="quan-ao">Quần áo</option>
+        <option value="sach">Sách</option>
+      </select>
+
+      <button id="sort-price-btn">Sắp xếp theo giá</button>
+
+      <div id="product-list"></div>
+
+      <p id="result-count"></p>
+    </div>
+
+    <script src="./bt3.js"></script>
+  </body>
+</html>
