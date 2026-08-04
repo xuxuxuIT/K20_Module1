@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Việc cần làm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <header class="app__header">
+            <p class="eyebrow">Danh sách hôm nay</p>
+            <h1>
+                Việc cần làm <i><i class="fa-solid fa-book"></i></i>
+            </h1>
+        </header>
+
+        <form class="add-form" id="add-form" novalidate>
+            <input type="text" id="todo-input" placeholder="Thêm việc mới..." autocomplete="off" />
+            <button type="submit">Thêm</button>
+        </form>
+        <p class="field-error" id="add-error" hidden>
+            Vui lòng nhập nội dung todo!
+        </p>
+
+        <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">TẤT CẢ</button>
+            <button class="filter-btn" data-filter="active">CHƯA HOÀN THÀNH</button>
+            <button class="filter-btn" data-filter="completed">HOÀN THÀNH</button>
+        </div>
+
+        <ul class="todo-list" id="todo-list"></ul>
+        <p class="empty-state" id="empty-state" hidden>Không có todo nào</p>
+
+        <footer class="app__footer">
+            <div class="progress">
+                <span id="progress-text">0/0 mục đã hoàn thành</span>
+                <div class="progress-bar">
+                    <div class="progress-bar__fill" id="progress-fill"></div>
+                </div>
+            </div>
+            <button class="btn-clear" id="clear-completed" hidden>
+                Xoá tất cả đã hoàn thành
+            </button>
+        </footer>
+    </div>
+
+    <script src="./action.js"></script>
+</body>
+
+</html>
