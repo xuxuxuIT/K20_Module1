@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slideshow / Carousel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slider" id="slider" tabindex="0" aria-label="Slideshow ảnh">
+      <span class="slider__counter" id="counter">1 / 5</span>
+
+      <div class="slider__viewport">
+        <div class="slider__track" id="track">
+          <!-- clone của slide cuối (ảnh 5) -->
+          <div class="slide clone" data-index="5">
+            <img src="./img/burger.png" alt="Ảnh 5 (clone)" />
+          </div>
+
+          <!-- 5 slide thật -->
+          <div class="slide" data-index="1">
+            <img src="./img/cake.avif" alt="Ảnh 1" />
+          </div>
+          <div class="slide" data-index="2">
+            <img src="./img/fries.avif" alt="Ảnh 2" />
+          </div>
+          <div class="slide" data-index="3">
+            <img src="./img/pizza.avif" alt="Ảnh 3" />
+          </div>
+          <div class="slide" data-index="4">
+            <img src="./img/salad.avif" alt="Ảnh 4" />
+          </div>
+          <div class="slide" data-index="5">
+            <img src="./img/burger.png" alt="Ảnh 5" />
+          </div>
+
+          <!-- clone của slide đầu (ảnh 1) -->
+          <div class="slide clone" data-index="1">
+            <img
+              src="https://picsum.photos/id/1015/1000/560"
+              alt="Ảnh 1 (clone)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="slider__btn slider__btn--prev"
+        id="prevBtn"
+        aria-label="Ảnh trước"
+      >
+        &#10094;
+      </button>
+      <button
+        class="slider__btn slider__btn--next"
+        id="nextBtn"
+        aria-label="Ảnh tiếp theo"
+      >
+        &#10095;
+      </button>
+
+      <div class="slider__dots" id="dots">
+        <button
+          class="dot active"
+          data-index="1"
+          aria-label="Đến ảnh 1"
+        ></button>
+        <button class="dot" data-index="2" aria-label="Đến ảnh 2"></button>
+        <button class="dot" data-index="3" aria-label="Đến ảnh 3"></button>
+        <button class="dot" data-index="4" aria-label="Đến ảnh 4"></button>
+        <button class="dot" data-index="5" aria-label="Đến ảnh 5"></button>
+      </div>
+    </div>
+
+    <script src="action.js"></script>
+  </body>
+</html>

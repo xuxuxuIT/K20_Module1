@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4c9a0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 40px 16px;
+}
+
+/* ===== Khung slider ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+/* ===== Viewport: phần cắt ảnh, bắt buộc overflow hidden ===== */
+.slider__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ===== Track chứa toàn bộ slide xếp hàng ngang ===== */
+.slider__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+}
+
+/* ===== Nút Previous / Next ===== */
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  z-index: 2;
+}
+.slider__btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.slider__btn:active {
+  transform: translateY(-50%) scale(0.92);
+}
+.slider__btn--prev {
+  left: 16px;
+}
+.slider__btn--next {
+  right: 16px;
+}
+
+/* ===== Số thứ tự ảnh ===== */
+.slider__counter {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Dots ===== */
+.slider__dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.dot.active {
+  width: 26px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 560px) {
+  .slide img {
+    height: 280px;
+  }
+  .slider__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}

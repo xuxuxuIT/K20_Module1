@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model K7 — Bàn phím cơ lập trình</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <p class="eyebrow">Xe máy điện</p>
+      <h1>Model xe máy điện học sinh</h1>
+      <p class="subtitle">Xe điện Vinfast</p>
+
+      <div class="tabs-wrapper">
+        <div
+          class="tablist"
+          role="tablist"
+          aria-label="Thông tin sản phẩm Model K7"
+        >
+          <button
+            class="tab-btn active"
+            role="tab"
+            id="tab-mota"
+            aria-controls="panel-mota"
+            aria-selected="true"
+            tabindex="0"
+            data-index="0"
+          >
+            <span class="num">01</span>Mô tả
+          </button>
+          <button
+            class="tab-btn"
+            role="tab"
+            id="tab-danhgia"
+            aria-controls="panel-danhgia"
+            aria-selected="false"
+            tabindex="-1"
+            data-index="1"
+          >
+            <span class="num">02</span>Đánh giá
+          </button>
+          <button
+            class="tab-btn"
+            role="tab"
+            id="tab-thongso"
+            aria-controls="panel-thongso"
+            aria-selected="false"
+            tabindex="-1"
+            data-index="2"
+          >
+            <span class="num">03</span>Thông số kỹ thuật
+          </button>
+          <button
+            class="tab-btn"
+            role="tab"
+            id="tab-binhluan"
+            aria-controls="panel-binhluan"
+            aria-selected="false"
+            tabindex="-1"
+            data-index="3"
+          >
+            <span class="num">04</span>Bình luận
+          </button>
+        </div>
+
+        <div class="panels">
+          <!-- Panel 1: Mô tả — text -->
+          <div
+            class="tab-panel active"
+            role="tabpanel"
+            id="panel-mota"
+            aria-labelledby="tab-mota"
+            tabindex="0"
+          >
+            <h2 class="panel-title">Về Model xe máy điện Evo</h2>
+            <div class="desc-grid">
+              <p>
+                VinFast Evo là mẫu xe máy điện hướng đến nhu cầu di chuyển hằng
+                ngày trong đô thị. Thiết kế hiện đại, kiểu dáng nhỏ gọn giúp xe
+                dễ dàng di chuyển trong những con đường đông đúc và phù hợp với
+                nhiều đối tượng người dùng.
+              </p>
+
+              <p>
+                Xe sử dụng động cơ điện cho khả năng vận hành êm ái, không phát
+                sinh khí thải trực tiếp trong quá trình sử dụng. Evo phù hợp cho
+                việc đi học, đi làm, đi mua sắm hoặc di chuyển trong thành phố.
+              </p>
+
+              <p class="muted">
+                VinFast Evo cũng được trang bị các tính năng hỗ trợ người dùng
+                như hệ thống đèn LED, màn hình hiển thị thông tin và hệ thống
+                khóa điện tử, mang lại sự tiện lợi và an toàn hơn trong quá
+                trình sử dụng.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 2: Đánh giá — list -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="panel-danhgia"
+            aria-labelledby="tab-danhgia"
+            tabindex="0"
+            hidden
+          >
+            <h2 class="panel-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+              optio distinctio dignissimos pariatur praesentium vel repellendus
+              sint assumenda? Et temporibus minus magni doloribus exercitationem
+              vel autem qui. Magni deleniti, eius deserunt cumque porro ducimus,
+              suscipit ab cum officia rem totam aperiam dicta nihil amet
+              temporibus sint molestiae repellendus impedit magnam.
+            </h2>
+          </div>
+
+          <!-- Panel 3: Thông số kỹ thuật — image + list -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="panel-thongso"
+            aria-labelledby="tab-thongso"
+            tabindex="0"
+            hidden
+          >
+            <h2 class="panel-title">Thông số kỹ thuật</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./action.js"></script>
+  </body>
+</html>
