@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang quảng cáo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: { teal: { 600: "#0f766e", 700: "#0d6058" } },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-100 font-sans text-slate-800 min-h-screen">
+    <main class="max-w-3xl mx-auto px-6 py-10">
+      <a
+        href="index.html"
+        class="text-sm text-teal-700 hover:text-teal-800 hover:underline"
+        >← Về trang chủ</a
+      >
+
+      <h1 class="text-3xl font-bold text-slate-900 mt-4 mb-6">
+        Trang quảng cáo
+      </h1>
+
+      <!-- Card hiển thị các tham số UTM đọc từ location.search -->
+      <section
+        class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm mb-8"
+      >
+        <p
+          class="text-xs font-medium text-slate-400 uppercase tracking-wide mb-3"
+        >
+          Tham số từ URL (location.search)
+        </p>
+
+        <div id="paramsBox" class="space-y-2">
+          <!-- JS sẽ điền nội dung vào đây -->
+        </div>
+      </section>
+
+      <!-- Nội dung quảng cáo mẫu -->
+      <section class="rounded-2xl overflow-hidden shadow-md">
+        <img
+          src="https://picsum.photos/id/210/1000/420"
+          alt="Nội dung quảng cáo"
+          class="w-full h-64 object-cover"
+        />
+        <div class="bg-white p-6">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">
+            Ưu đãi mùa hè — Giảm 30% toàn bộ sản phẩm
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Đây là nội dung quảng cáo mẫu, có thể thay bằng text, hình ảnh, hoặc
+            video tuỳ ý. Chiến dịch này được theo dõi thông qua các tham số UTM
+            ở phía trên.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="campaign.js"></script>
+  </body>
+</html>
