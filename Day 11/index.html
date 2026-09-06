@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Card Layout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 2 checkbox điều khiển toàn bộ trạng thái, đặt ở đầu <body> để mọi
+     phần tử cần theo dõi (.page và các phần tử con) đều là sibling phía sau -->
+    <input type="checkbox" id="menu-toggle" class="toggle-checkbox" />
+    <input type="checkbox" id="dark-mode-toggle" class="toggle-checkbox" />
+
+    <div class="page">
+      <header class="header">
+        <div class="header__container">
+          <a href="#" class="header__logo">BrandName</a>
+
+          <div class="header__actions">
+            <nav class="nav header__nav">
+              <label
+                for="menu-toggle"
+                class="nav__close-btn"
+                aria-label="Đóng menu"
+              >
+                <i class="mdi mdi-close"></i>
+              </label>
+              <a href="#" class="nav__link">Trang chủ</a>
+              <a href="#" class="nav__link">Giới thiệu</a>
+              <a href="#" class="nav__link">Dịch vụ</a>
+              <a href="#" class="nav__link">Liên hệ</a>
+            </nav>
+
+            <label
+              for="dark-mode-toggle"
+              class="dark-toggle"
+              aria-label="Chuyển chế độ sáng/tối"
+            >
+              <span class="dark-toggle__icon"></span>
+            </label>
+
+            <label
+              for="menu-toggle"
+              class="header__hamburger"
+              aria-label="Mở menu"
+            >
+              <i class="mdi mdi-menu"></i>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <!-- Overlay nằm ngoài <header>, là sibling trực tiếp của header trong .page -->
+      <label for="menu-toggle" class="overlay" aria-hidden="true"></label>
+
+      <main class="container">
+        <section class="container__content">
+          <h1 class="container__heading">Responsive Card Layout</h1>
+          <p class="container__paragraph">
+            Khu vực nội dung chính. Desktop: 2 cột ngang với sidebar cố định.
+            Mobile: xếp dọc 1 cột.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card__header">Card 1</div>
+              <div class="card__body">
+                <p class="card__text">Nội dung mô tả ngắn cho card đầu tiên.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__header">Card 2</div>
+              <div class="card__body">
+                <p class="card__text">Nội dung mô tả ngắn cho card thứ hai.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__header">Card 3</div>
+              <div class="card__body">
+                <p class="card__text">Nội dung mô tả ngắn cho card thứ ba.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__header">Card 4</div>
+              <div class="card__body">
+                <p class="card__text">
+                  Nội dung mô tả ngắn cho card thứ tư (tự xuống hàng ở desktop).
+                </p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__header">Card 5</div>
+              <div class="card__body">
+                <p class="card__text">Nội dung mô tả ngắn cho card thứ năm.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <aside class="container__sidebar">
+          <h2 class="container__heading">Sidebar</h2>
+          <p class="container__paragraph">
+            Nội dung phụ, widget, hoặc quảng cáo.
+          </p>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
