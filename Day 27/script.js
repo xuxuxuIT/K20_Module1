@@ -1,10 +1,5 @@
-// script.js — Trang chủ + Trang Fingerprinting (điều hướng kiểu SPA bằng history API)
-
 const $ = document.querySelector.bind(document);
 
-// ============================================================
-// DOM REFS
-// ============================================================
 const homeView = $("#homeView");
 const fingerprintView = $("#fingerprintView");
 
@@ -28,13 +23,7 @@ const fpBrowser = $("#fpBrowser");
 const fpOS = $("#fpOS");
 const fpLanguages = $("#fpLanguages");
 const fpScreen = $("#fpScreen");
-
-// ============================================================
-// 1) THU THẬP THÔNG TIN TỪ BOM (Browser Object Model)
-// ============================================================
-
-// Đổi tên bạn ở đây để dùng cho tham số utm_source của banner quảng cáo
-const YOUR_NAME = "hoc_vien_01";
+const YOUR_NAME = "Linh Pham";
 
 function detectBrowser(ua) {
   if (/Edg\//.test(ua)) return "Microsoft Edge";
@@ -64,9 +53,7 @@ function getOrientation() {
     ? "portrait"
     : "landscape";
 }
-
-// Thu thập các thông tin ĐỒNG BỘ (không cần chờ) — dùng chung cho cả
-// trang chủ lẫn khi build lại state cho fingerprinting.
+//luu thong tin dong bo
 function collectSyncInfo() {
   const ua = navigator.userAgent;
   return {
@@ -99,11 +86,7 @@ function getLocationText(callback) {
   );
 }
 
-// ============================================================
-// 2) RENDER TRANG CHỦ
-// ============================================================
-
-// Lưu lại info mới nhất để dùng khi bấm nút "Xem vân tay thiết bị"
+// render trang chủ
 let currentInfo = {
   location: "Đang lấy vị trí...",
   ...collectSyncInfo(),
@@ -146,10 +129,7 @@ window.addEventListener("offline", () => {
 // Gán href cho banner quảng cáo với đúng định dạng utm_source & utm_campaign
 adBanner.href = `campaign.html?utm_source=${encodeURIComponent(YOUR_NAME)}&utm_campaign=campage_1`;
 
-// ============================================================
-// 3) CHUYỂN SANG TRANG FINGERPRINTING (SPA bằng history.pushState)
-// ============================================================
-
+//trang fingerprinting
 function buildFingerprintString(state) {
   // Yêu cầu đề: dùng phép NỐI CHUỖI (không dùng JSON.stringify)
   return (
@@ -194,23 +174,14 @@ function showFingerprintView(state) {
 
 goFingerprintBtn.addEventListener("click", () => {
   const state = { page: "fingerprint", ...currentInfo };
-
-  // pushState: đổi URL sang ?view=fingerprint mà KHÔNG reload trang,
-  // đồng thời mang theo toàn bộ dữ liệu qua tham số state.
-  history.pushState(state, "Fingerprinting", "?view=fingerprint");
-
   showFingerprintView(state);
 });
 
 backHomeBtn.addEventListener("click", () => {
-  // Dùng history.back() để quay lại đúng entry trước đó trong lịch sử
-  // (sẽ tự động kích hoạt sự kiện popstate bên dưới để hiện lại trang chủ).
   history.back();
 });
 
-// ============================================================
-// 4) ĐỒNG BỘ VỚI NÚT BACK / FORWARD CỦA TRÌNH DUYỆT
-// ============================================================
+//đồng bộ với nút back/ forward của trình duyệt
 window.addEventListener("popstate", (e) => {
   if (e.state && e.state.page === "fingerprint") {
     showFingerprintView(e.state);
@@ -219,9 +190,6 @@ window.addEventListener("popstate", (e) => {
   }
 });
 
-// ============================================================
-// 5) XỬ LÝ KHI TRUY CẬP TRỰC TIẾP VÀO ?view=fingerprint (vd: reload trang)
-// ============================================================
 (function initRouting() {
   const params = new URLSearchParams(location.search);
 
