@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="products.html" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M19 12H5M12 19l-7-7 7-7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Quay lại danh sách
+        </a>
+        <h1 class="site-header__title">🛍️ Cửa hàng</h1>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div id="loadingState" class="state-block">
+        <div class="spinner"></div>
+        <p>Đang tải thông tin sản phẩm...</p>
+      </div>
+
+      <div id="errorState" class="state-block" hidden>
+        <p class="state-block__icon">⚠️</p>
+        <p id="errorText"></p>
+        <a href="products.html" class="state-block__link"
+          >← Về trang danh sách</a
+        >
+      </div>
+
+      <div id="detailContent" hidden>
+        <div class="detail-card">
+          <div class="gallery">
+            <div class="gallery__main">
+              <img id="mainImage" src="" alt="" />
+            </div>
+            <div id="thumbList" class="gallery__thumbs"></div>
+          </div>
+
+          <div class="detail-info">
+            <p id="pCategory" class="detail-info__category"></p>
+            <h1 id="pTitle" class="detail-info__title"></h1>
+            <p id="pBrand" class="detail-info__brand"></p>
+
+            <div class="detail-info__status-row">
+              <span id="pRating" class="rating-badge"></span>
+              <span id="pStock" class="badge"></span>
+            </div>
+
+            <div class="detail-info__price-row">
+              <span id="pSalePrice" class="detail-info__sale-price"></span>
+              <span
+                id="pOriginalPrice"
+                class="detail-info__original-price"
+              ></span>
+              <span id="pDiscount" class="detail-info__discount"></span>
+            </div>
+
+            <p id="pDescription" class="detail-info__description"></p>
+
+            <dl class="spec-list">
+              <dt>SKU</dt>
+              <dd id="pSku"></dd>
+              <dt>Cân nặng</dt>
+              <dd id="pWeight"></dd>
+              <dt>Kích thước</dt>
+              <dd id="pDimensions"></dd>
+            </dl>
+
+            <div id="pTags" class="tag-list"></div>
+          </div>
+        </div>
+
+        <div class="reviews-card">
+          <h2 class="reviews-card__title">Đánh giá từ khách hàng</h2>
+          <div id="reviewsList"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="detail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách sản phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <h1 class="site-header__title">🛍️ Cửa hàng</h1>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="toolbar">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Tìm sản phẩm..."
+          class="field"
+        />
+
+        <select id="categorySelect" class="field">
+          <option value="">Tất cả danh mục</option>
+        </select>
+
+        <select id="sortSelect" class="field">
+          <option value="">Sắp xếp mặc định</option>
+          <option value="title-asc">Tên A → Z</option>
+          <option value="title-desc">Tên Z → A</option>
+          <option value="price-asc">Giá thấp → cao</option>
+          <option value="price-desc">Giá cao → thấp</option>
+        </select>
+      </section>
+
+      <div id="loadingState" class="state-block" hidden>
+        <div class="spinner"></div>
+        <p>Đang tải sản phẩm...</p>
+      </div>
+
+      <div id="errorState" class="state-block" hidden>
+        <p class="state-block__icon">⚠️</p>
+        <p id="errorText"></p>
+      </div>
+
+      <div id="productsGrid" class="products-grid"></div>
+
+      <div id="pagination" class="pagination" hidden></div>
+    </main>
+
+    <script src="products.js"></script>
+  </body>
+</html>
