@@ -37,7 +37,9 @@ async function loadProfile() {
 
     localStorage.setItem("user", JSON.stringify(user));
 
-    const avatar = user.avatar_url || user.avatar || user.image_url || "";
+    const avatar = toHttps(
+      user.avatar_url || user.avatar || user.image_url || "",
+    );
     const name =
       user.display_name || user.username || user.name || "Người dùng";
 

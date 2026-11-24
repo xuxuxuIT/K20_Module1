@@ -98,7 +98,6 @@ function formatDetail(item) {
 }
 
 function getErrorMessage(data, status) {
-  // Lỗi có thể nằm trong data hoặc data.error
   let err = data;
   if (data.error && typeof data.error === "object") {
     err = data.error;
@@ -198,4 +197,11 @@ function renderNav() {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", logout);
   }
+}
+
+function toHttps(url) {
+  if (typeof url === "string") {
+    return url.replace("http://", "https://");
+  }
+  return url;
 }
